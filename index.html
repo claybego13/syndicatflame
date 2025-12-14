@@ -86,32 +86,31 @@
         h1 {
             margin-bottom: 12px;
             font-size: 22px;
-        }
-
-        h1 {
             color: #fff;
             text-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
 
         p {
             font-size: 14px;
-            color: #ccc;
             line-height: 1.6;
             color: #ddd;
         }
+
         .target {
             margin: 20px 0 6px;
             font-weight: bold;
         }
+
         .progress-bar {
             background: #333;
             border-radius: 20px;
             overflow: hidden;
             height: 18px;
         }
+
         .progress {
             height: 100%;
-            width: 31%; /* contoh: 8 dari 25 pcs */
+            width: 31%;
             background: linear-gradient(90deg, #00c6ff, #0072ff);
             box-shadow:
                 0 0 10px rgba(0,198,255,0.8),
@@ -124,6 +123,7 @@
             font-size: 13px;
             color: #aaa;
         }
+
         .donate-btn {
             box-shadow: 0 8px 20px rgba(0,198,255,0.35);
             display: inline-block;
@@ -136,25 +136,20 @@
             font-weight: bold;
             transition: 0.3s;
         }
+
         .donate-btn:hover {
             box-shadow: 0 12px 30px rgba(0,114,255,0.6);
             transform: translateY(-2px);
             background: #0072ff;
             color: #fff;
         }
+
         .alt-donation {
             margin-top: 16px;
             font-size: 12px;
             color: #bbb;
         }
 
-        .alt-donation a {
-            color: #00c6ff;
-            text-decoration: none;
-        }
-        .alt-donation a:hover {
-            text-decoration: underline;
-        }
         footer {
             margin-top: 22px;
             font-size: 12px;
@@ -177,6 +172,7 @@
             align-items: center;
             z-index: 999;
         }
+
         .qr-content {
             background: #111;
             padding: 22px;
@@ -187,35 +183,36 @@
             color: #ccc;
             position: relative;
         }
+
         .qr-content h3 {
             margin-bottom: 16px;
             color: #fff;
         }
+
         .qr-item {
             margin-bottom: 18px;
         }
+
         .qr-item h4 {
             margin-bottom: 8px;
             font-size: 14px;
             color: #00c6ff;
         }
+
         .qr-item img {
             width: 160px;
             border-radius: 10px;
             background: #fff;
             padding: 6px;
         }
-        .qr-link {
-            color: #00c6ff;
-            font-weight: 600;
-            text-shadow: 0 0 6px rgba(0,198,255,0.6);
-        }
+
         .address {
             font-size: 11px;
             word-break: break-all;
             color: #aaa;
             margin-top: 6px;
         }
+
         .copy-btn {
             margin-top: 6px;
             padding: 6px 14px;
@@ -227,14 +224,17 @@
             cursor: pointer;
             transition: 0.2s;
         }
+
         .copy-btn:hover {
             background: #00c6ff;
             color: #000;
         }
+
         .note {
             font-size: 11px;
             color: #777;
         }
+
         .close {
             position: absolute;
             top: 12px;
@@ -255,9 +255,10 @@
         atau korek kamu kena sikat temen tongkrongan sendiri?
         Tenang bro, kita jualan <strong>Syndicatflame Vol.1</strong>.
         Desain simple, nyala stabil, cocok buat koleksi atau dipakai harian.
-        Apa yang menarik dan memberi kesan beda korek api merk <strong>Syndicatflame</strong> dengn korek lainnya?
-        Ya, produksi sangat terbatas alias super limited edition dengan desain 100% Original & unik kece abiezZZ.
-        Produksi hanya tiap akhir tahun saja. Beli korek = Beli kenangan akhir tahunmu 😎
+        Produksi sangat terbatas alias super limited edition dengan desain
+        100% Original & unik kece abiezZZ.
+        Produksi hanya tiap akhir tahun saja.
+        Beli korek = Beli kenangan akhir tahunmu 😎
     </p>
 
     <div class="target">Harga $10, Target Produksi Batch Awal: 25 pcs</div>
@@ -271,14 +272,13 @@
     </div>
 
     <a href="https://line.me/ti/p/GwvmPRxq5T" target="_blank" class="donate-btn">
-        Beli Korek Sekarang 🧯
+        Bayar via QRIS / Crypto
     </a>
 
     <div class="alt-donation">
-        Atau bayar via 
-        <a href="#" id="openQR" class="qr-link">QRIS / Crypto</a>
+        or join the club
     </div>
-    
+
     <footer>
         Setiap pembelian bantu produksi korek batch berikutnya<br>
         Terimakasih & Happy New Year 🙏 <br>
@@ -293,32 +293,28 @@
         <h3>All Bank / Crypto</h3>
 
         <div class="qr-item">
-            <h4>LINE Banyak</h4>
+            <h4>LINE Bank</h4>
             <img src="qris.png" alt="LINE">
-            <p class="address" id="lineAddress">10877749830</p>
+            <p class="address">10877749830</p>
             <p>a.n. Syndicatflame</p>
         </div>
-        
+
         <div class="qr-item">
             <h4>Ethereum (ETH)</h4>
             <img src="eth.png" alt="ETH QR">
-            <p class="address" id="ethAddress">
+            <p class="address">
                 0xb42d8ed3ba70b71ec8d8f7b7e4657a2c0b79b5c1
             </p>
-            <button class="copy-btn" data-copy="ethAddress">
-                Copy Address
-            </button>
+            <button class="copy-btn">Copy Address</button>
         </div>
-        
+
         <div class="qr-item">
             <h4>Binance (BNB)</h4>
             <img src="eth.png" alt="BNB QR">
-            <p class="address" id="bnbAddress">
+            <p class="address">
                 0xb42d8ed3ba70b71ec8d8f7b7e4657a2c0b79b5c1
             </p>
-            <button class="copy-btn" data-copy="bnbAddress">
-                Copy Address
-            </button>
+            <button class="copy-btn">Copy Address</button>
         </div>
 
         <p class="note">
@@ -326,32 +322,6 @@
         </p>
     </div>
 </div>
-
-<script>
-function openQR() {
-    document.getElementById('qrModal').style.display = 'flex';
-}
-function closeQR() {
-    document.getElementById('qrModal').style.display = 'none';
-}
-function copyAddress(id) {
-    const text = document.getElementById(id).innerText;
-    navigator.clipboard.writeText(text).then(() => {
-        alert('Alamat berhasil disalin 👍');
-        closeQR();
-    });
-}
-(function () {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-if (isMobile && !sessionStorage.getItem('qrOpened')) {
-    setTimeout(() => {
-        openQR();
-        sessionStorage.setItem('qrOpened', 'yes');
-    }, 1200);
-}
-
-})();
-</script>
 
 </body>
 </html>

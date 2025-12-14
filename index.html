@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syndicat Korek – Waspadalah! Banyak sindikat korek di sekitarmu 🔥</title>
     <style>
+
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +27,7 @@
             align-items: center;
             min-height: 100vh;
         }
-        
+
         body::before {
             content: "";
             position: fixed;
@@ -47,9 +48,7 @@
             width: 90%;
             border-radius: 16px;
             text-align: center;
-
             position: relative;
-
             box-shadow:
                 0 20px 40px rgba(0,0,0,0.6);
         }
@@ -239,9 +238,10 @@
     </a>
 
     <div class="alt-donation">
-        Atau bayar via <a href="#" onclick="openQR()">QRIS / Crypto</a>
+        Atau bayar via 
+        <a href="#" id="openQR">QRIS / Crypto</a>
     </div>
-
+    
     <footer>
         Setiap pembelian bantu produksi korek batch berikutnya<br>
         Terimakasih & Happy New Year 🙏 <br>
@@ -252,7 +252,7 @@
 <!-- === MODAL QR === -->
 <div class="qr-modal" id="qrModal">
     <div class="qr-content">
-        <span class="close" onclick="closeQR()">×</span>
+        <span class="close" id="closeQR">×</span>
         <h3>All Bank / Crypto</h3>
 
         <div class="qr-item">
@@ -268,7 +268,7 @@
             <p class="address" id="ethAddress">
                 0xb42d8ed3ba70b71ec8d8f7b7e4657a2c0b79b5c1
             </p>
-            <button class="copy-btn" onclick="copyAddress('ethAddress')">
+            <button class="copy-btn" data-copy="ethAddress">
                 Copy Address
             </button>
         </div>
@@ -279,7 +279,7 @@
             <p class="address" id="bnbAddress">
                 0xb42d8ed3ba70b71ec8d8f7b7e4657a2c0b79b5c1
             </p>
-            <button class="copy-btn" onclick="copyAddress('bnbAddress')">
+            <button class="copy-btn" data-copy="bnbAddress">
                 Copy Address
             </button>
         </div>
@@ -306,9 +306,13 @@ function copyAddress(id) {
 }
 (function () {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-        setTimeout(openQR, 1200);
-    }
+if (isMobile && !sessionStorage.getItem('qrOpened')) {
+    setTimeout(() => {
+        openQR();
+        sessionStorage.setItem('qrOpened', 'yes');
+    }, 1200);
+}
+
 })();
 </script>
 

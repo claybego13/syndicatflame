@@ -48,19 +48,27 @@
         .container {
             position: relative;
             z-index: 1;
-        }
 
-        .container {
-            overflow: hidden;
-            background: #111;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
             padding: 30px;
             max-width: 420px;
             width: 90%;
             border-radius: 16px;
             text-align: center;
-            position: relative;
-            box-shadow:
-                0 20px 40px rgba(0,0,0,0.6);
+
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+            border-radius: 16px;
+            z-index: -1;
         }
 
         .container::before {
@@ -79,10 +87,17 @@
             margin-bottom: 12px;
             font-size: 22px;
         }
+
+        h1 {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
         p {
             font-size: 14px;
             color: #ccc;
             line-height: 1.6;
+            color: #ddd;
         }
         .target {
             margin: 20px 0 6px;

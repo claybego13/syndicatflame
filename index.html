@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syndicat Korek – Waspadalah! Banyak sindikat korek di sekitarmu 🔥</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #111;
+            padding: 30px;
+            max-width: 420px;
+            width: 90%;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        h1 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+        p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .target {
+            margin: 20px 0 6px;
+            font-weight: bold;
+        }
+        .progress-bar {
+            background: #333;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 18px;
+        }
+        .progress {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            height: 100%;
+            width: 31%;
+            transition: width 0.8s ease;
+            box-shadow: 0 0 10px rgba(0,198,255,0.6);
+        }
+        .amount {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #aaa;
+        }
+        .donate-btn {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 26px;
+            background: #00c6ff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .donate-btn:hover {
+            background: #0072ff;
+            color: #fff;
+        }
+        .alt-donation {
+            margin-top: 14px;
+            font-size: 12px;
+            color: #888;
+        }
+        .alt-donation a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+        .alt-donation a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* === MODAL QR === */
+        .qr-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .qr-content {
+            background: #111;
+            padding: 22px;
+            width: 90%;
+            max-width: 360px;
+            border-radius: 14px;
+            text-align: center;
+            color: #ccc;
+            position: relative;
+        }
+        .qr-content h3 {
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .qr-item {
+            margin-bottom: 18px;
+        }
+        .qr-item h4 {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #00c6ff;
+        }
+        .qr-item img {
+            width: 160px;
+            border-radius: 10px;
+            background: #fff;
+            padding: 6px;
+        }
+        .address {
+            font-size: 11px;
+            word-break: break-all;
+            color: #aaa;
+            margin-top: 6px;
+        }
+        .copy-btn {
+            margin-top: 6px;
+            padding: 6px 14px;
+            font-size: 11px;
+            background: #222;
+            color: #00c6ff;
+            border: 1px solid #333;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .copy-btn:hover {
+            background: #00c6ff;
+            color: #000;
+        }
+        .note {
+            font-size: 11px;
+            color: #777;
+        }
+        .close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Syndicat Korek 🔥</h1>
+
+    <p>
+        Pernah kehabisan korek pas lagi butuh-butuhnya?
+        atau korek kamu kena sikat temen tongkrongan sendiri?
+        Tenang bro, kita jualan <strong>korek api edisi Syndicat Korek Vol.1</strong>.
+        Desain simple, nyala stabil, cocok buat koleksi atau dipakai harian.
+        Apa yang menarik dan memberi kesan beda korek api merk <strong>Syndicat Korek</strong> dengn korek lainnya?
+        Ya, produksi sangat terbatas alias super limited edition. Produksi hanya tiap akhir tahun saja.
+        Beli korek = Beli kenangan akhir tahunmu 😎
+    </p>
+
+    <div class="target">Harga $10, Target Produksi Batch Awal: 25 pcs</div>
+
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+
+    <div class="amount">
+        Harga belum termasuk ongkir.
+    </div>
+
+    <a href="https://paypal.me/username" target="_blank" class="donate-btn">
+        Beli Korek Sekarang 🧯
+    </a>
+
+    <div class="alt-donation">
+        Atau bayar via <a href="#" onclick="openQR()">QRIS / Crypto</a>
+    </div>
+
+    <footer>
+        Setiap pembelian bantu produksi korek batch berikutnya<br>
+        Terimakasih & Happy New Year 🙏 <br>
+        © 2025 Syndicat Korek Vol.1
+    </footer>
+</div>
+
+<!-- === MODAL QR === -->
+<div class="qr-modal" id="qrModal">
+    <div class="qr-content">
+        <span class="close" onclick="closeQR()">×</span>
+        <h3>All Bank / Crypto</h3>
+
+        <div class="qr-item">
+            <h4>LINE Banyak</h4>
+            <img src="qris.png" alt="LINE">
+            <p class="address" id="btcAddress">10877749830</p>
+            <p>a.n. Syndicatflame</p>
+        </div>
+
+        <div class="qr-item">
+            <h4>Ethereum (ETH)</h4>
+            <img src="eth.png" alt="ETH QR">
+            <p class="address" id="btcAddress">0xb42d8ed3ba70b71ec8d8f7b7e4657a2c0b79b5c1</p>
+            <button class="copy-btn" onclick="copyAddress('ethAddress')">
+                Copy Address
+            </button>
+        </div>
+
+        <div class="qr-item">
+            <h4>Binance (BNB)</h4>
+            <img src="eth.png" alt="BNB QR">
+            <p class="address" id="btcAddress">0xb42d8ed3ba70b71ec8d8f7b7e4657a2c0b79b5c1</p>
+            <button class="copy-btn" onclick="copyAddress('bnbAddress')">
+                Copy Address
+            </button>
+        </div>
+
+        <p class="note">
+            Pastikan alamat & network sudah benar sebelum transfer 🔥
+        </p>
+    </div>
+</div>
+
+<script>
+function openQR() {
+    document.getElementById('qrModal').style.display = 'flex';
+}
+function closeQR() {
+    document.getElementById('qrModal').style.display = 'none';
+}
+function copyAddress(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Alamat berhasil disalin 👍');
+        closeQR();
+    });
+}
+(function () {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+        setTimeout(openQR, 1200);
+    }
+})();
+</script>
+
+</body>
+</html>

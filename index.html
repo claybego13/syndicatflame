@@ -271,9 +271,9 @@
         Harga belum termasuk ongkir.
     </div>
 
-    <a href="https://line.me/ti/p/GwvmPRxq5T" target="_blank" class="donate-btn">
+    <button class="donate-btn" onclick="openQR()">
         Bayar via QRIS / Crypto
-    </a>
+    </button>
 
     <div class="alt-donation">
         or join the club
@@ -322,6 +322,20 @@
         </p>
     </div>
 </div>
-
+    <script>
+        function openQR() {
+            document.getElementById('qrModal').style.display = 'flex';
+        }
+        
+        function closeQR() {
+            document.getElementById('qrModal').style.display = 'none';
+        }
+        
+        document.getElementById('closeQR').onclick = closeQR;
+        
+        document.getElementById('qrModal').onclick = (e) => {
+            if (e.target.id === 'qrModal') closeQR();
+        };
+        </script>
 </body>
 </html>
